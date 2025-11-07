@@ -1,14 +1,18 @@
 import { Routes } from '@angular/router';
+import { Homepage } from './features/homepage/homepage';
 import { Perfilpage } from './features/perfilpage/perfilpage';
-// import { Homepage } from './features/homepage/homepage';
+import { ProyectosPage } from './features/proyectospage/proyectospage';
+import { ProyectosDosPage } from './features/proyectos-dos-pages/proyectos-dos-pages';
 
 export const routes: Routes = [
-    // {
-    //     path: 'home',
-    //     component: Homepage
-    // },
-    {
-        path: '',
-        component: Perfilpage
-    }
+  { path: '', component: Homepage },
+
+  { path: 'perfil', 
+    component: Perfilpage },
+
+  { path: 'proyectos', 
+    component: ProyectosPage },
+    
+  { path: 'proyectos-dos', 
+    component: ProyectosDosPage },
 ];
