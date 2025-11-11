@@ -1,11 +1,8 @@
-<h1>Proyectos</h1>
-
 <section>
   <div>
     <h3>Agregar Proyecto</h3>
     <h4>Proyecto a Agregar</h4>
 
-    <!-- Input para el nombre -->
     <input 
       type="text"
       placeholder="Nombre del Proyecto"
@@ -13,8 +10,6 @@
       (change)="changeName(txtName.value)" 
       #txtName
     >
-
-    <!-- Input para la descripción -->
     <input 
       type="text"
       placeholder="Descripción del Proyecto"
@@ -24,20 +19,8 @@
     >
 
     <button (click)="addProyecto()">Agregar</button>
+    <button (click)="delFirstProyecto()">Eliminar Primer Proyecto</button>
     
   </div>
-
-  <div>
-    <h3>Listado</h3>
-    <ul>
-      @for (proyecto of proyectos(); track $index) {
-        <li>{{ proyecto.nombre }} - {{ proyecto.descripcion }}</li>
-      }
-    </ul>
-  </div>
-  <listado-proyectos 
-  [listName]="'Listado de Proyectos'" 
-  [proyectos]="proyectos()">
-</listado-proyectos>
 
 </section>

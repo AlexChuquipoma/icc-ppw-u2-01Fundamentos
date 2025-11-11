@@ -1,15 +1,9 @@
-<nav>
+<listado-proyectos 
+  listName="Listado Proyectos desde Servicio"
+  [proyectos]="proyectosService.proyectos()">
+</listado-proyectos>
 
-  <!-- <a href="/">Home</a>
-  <a href="/perfil">Perfil</a> -->
-<a
-  routerLink=""
-  routerLinkActive = "active"
-    
-  >Home</a>
+<p> Aqui deberia estar un componente que agrege al Servicio</p>
 
-  <a 
-  routerLink="/perfil" 
-  routerLinkActive="active"
-  >Perfil</a>
-</nav>
+<add-proyecto (newProyecto)="proyectosService.addProyecto($event)"
+              (delProyecto)="proyectosService.delFirstProyecto()"></add-proyecto>

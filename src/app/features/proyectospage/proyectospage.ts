@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ListadoProyectos } from './components/listado-proyectos/listado-proyectos';
 
 interface Proyecto {
   id: number;
@@ -9,7 +10,7 @@ interface Proyecto {
 @Component({
   selector: 'app-proyectos-page',
   standalone: true,
-  imports: [],
+  imports: [ListadoProyectos],
   templateUrl: './proyectospage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -17,8 +18,9 @@ export class ProyectosPage {
 
   name = signal('');
   description = signal('');
+
   proyectos = signal<Proyecto[]>([
-    { id: 1, nombre: 'Proyecto 1', descripcion: 'Descripción del proyecto 1' }
+    { id: 1, nombre: 'Proyecto A', descripcion: 'Descripción' },
   ]);
 
   changeName(value: string) {
