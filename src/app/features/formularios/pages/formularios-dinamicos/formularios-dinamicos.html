@@ -14,6 +14,19 @@
         formControlName="name"
         placeholder="Nombre del proyecto"
       >
+
+      @if(myForm.get('name')?.invalid && myForm.get('name')?.touched) {
+
+  <span class="form-text text-danger" *ngIf="myForm.get('name')?.errors?.['required']">
+    El nombre es obligatorio.
+  </span>
+
+  <span class="form-text text-danger" *ngIf="myForm.get('name')?.errors?.['minlength']">
+    Debe tener al menos 3 caracteres.
+  </span>
+
+}
+
     </div>
   </div>
 
@@ -22,7 +35,7 @@
     <div class="col-sm-9">
       <div class="input-group">
         <input
-          class="form-control"
+          class="form-control"  
           placeholder="Agregar lenguaje"
           [formControl]="newLenguaje"
           (keydown.enter)="onAddToLenguajes(); $event.preventDefault()"
