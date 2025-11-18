@@ -23,9 +23,6 @@
 
 
 
-
-
-
 ## Instalación de Angular CLI
 
 Primero instala el **Angular CLI** globalmente:

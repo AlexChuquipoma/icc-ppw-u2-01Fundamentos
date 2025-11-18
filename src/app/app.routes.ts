@@ -1,23 +1,25 @@
 import { Routes } from '@angular/router';
+
 import { Homepage } from './features/homepage/homepage';
 import { Perfilpage } from './features/perfilpage/perfilpage';
 import { ProyectosPage } from './features/proyectospage/proyectospage';
 import { ProyectosDosPage } from './features/proyectos-dos-pages/proyectos-dos-pages';
-import { Formulariopage } from './features/formulariopage/formulariopage';
 
 export const routes: Routes = [
   { path: '', component: Homepage },
 
-  { path: 'perfil', 
-    component: Perfilpage },
+  { path: 'perfil', component: Perfilpage },
 
-  { path: 'proyectos', 
-    component: ProyectosPage },
-    
-  { path: 'proyectos-dos', 
-    component: ProyectosDosPage },
+  { path: 'proyectos', component: ProyectosPage },
 
-  {path: 'formulariopage',
-    component: Formulariopage},
+  { path: 'proyectos-dos', component: ProyectosDosPage },
 
+  {
+    path: 'formularios',
+    loadChildren: () =>
+      import('./features/formularios/formularios-routes')
+        .then(m => m.formulariosRoutes),
+  },
+
+  { path: '**', redirectTo: '' },
 ];
